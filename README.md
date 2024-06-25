@@ -2,6 +2,8 @@
 
 Demo of steganography using JavaScript in a simple image
 
+you can visite the demo in github pages here [steg js demo](https://mrhili.github.io/stegjs-demo/)
+
 ## Overview
 This project demonstrates how to use steganography to hide a text message within an image using JavaScript. The Least Significant Bit (LSB) method is used to encode the message into the pixel data of the image, ensuring minimal visual distortion. The message length is also embedded into the image to facilitate decoding.
 
