@@ -19,6 +19,7 @@
     <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(event)">
     <br>
     <button id="encodeUploadedImage" style="display:none;" onclick="encodeMessageToUploadedImage()">Add Message to Uploaded Image</button>
+    <button onclick="downloadImage()">Download Image</button> <!-- Download button -->
 
     <script>
         let uploadedImageData;
@@ -163,7 +164,6 @@
 
                     uploadedImageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-                    // Enable the button to encode message to uploaded image
                     document.getElementById('encodeUploadedImage').style.display = 'inline';
 
                     try {
@@ -198,6 +198,15 @@
             } catch (error) {
                 alert('Failed to encode message: ' + error.message);
             }
+        }
+
+        // Function to download the modified image
+        function downloadImage() {
+            const canvas = document.getElementById('canvas');
+            const link = document.createElement('a');
+            link.download = 'steganography_image.png';
+            link.href = canvas.toDataURL();
+            link.click();
         }
     </script>
 </body>
